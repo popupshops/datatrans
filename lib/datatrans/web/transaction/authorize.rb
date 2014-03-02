@@ -8,13 +8,10 @@ class Datatrans::Web::Transaction
     end
 
     def successful?
-      raise Datatrans::InvalidSignatureError unless valid_signature?
-      response_code == '01' && response_message == 'Authorized' && !errors_occurred?
+      response_code == '01' && response_message == 'Authorized' && !errors_occurred? && valid_signature?
     end
 
     def valid_signature?
-      # TODO: does not make sense... true if errors?
-      return true if errors_occurred? # no sign2 sent on error
       sign(self.datatrans.merchant_id, params[:amount], params[:currency], params[:uppTransactionId]) == params[:sign2]
     end
 
