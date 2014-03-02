@@ -35,7 +35,7 @@ class Datatrans::Web::Transaction
     end
 
     def authorization_code
-      params[:authorizationCode] rescue nil
+      params[:acqAuthorizationCode] rescue nil
     end
 
     def payment_method
