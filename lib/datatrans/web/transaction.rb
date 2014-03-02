@@ -20,8 +20,11 @@ module Datatrans::Web
     end
 
     def authorize
-      @response = AuthorizeResponse.new(datatrans, params)
-      @response.successful?
+      response.successful?
+    end
+
+    def response
+      @response ||= AuthorizeResponse.new(datatrans, params)
     end
 
     def method_missing(method, *args, &block)
