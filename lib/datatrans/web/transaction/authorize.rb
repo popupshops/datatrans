@@ -8,7 +8,7 @@ class Datatrans::Web::Transaction
     end
 
     def successful?
-      response_code == '01' && response_message == 'Authorized' && !errors_occurred? && valid_signature?
+      response_code == '01' && status == 'success' && !errors_occurred? && valid_signature?
     end
 
     def valid_signature?
@@ -21,6 +21,10 @@ class Datatrans::Web::Transaction
 
     def response_message
       params[:responseMessage] rescue nil
+    end
+
+    def status
+      params[:status] rescue nil
     end
 
     def transaction_id
