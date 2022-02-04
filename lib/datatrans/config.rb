@@ -5,8 +5,8 @@ module Datatrans
 
     DEFAULT_SIGN_KEY = false
 
-    BASE_URL_PRODUCTION = 'https://payment.datatrans.biz'.freeze
-    BASE_URL_DEVELOPMENT = 'https://pilot.datatrans.biz'.freeze
+    BASE_URL_PRODUCTION = 'https://api.datatrans.com'.freeze
+    BASE_URL_DEVELOPMENT = 'https://api.sandbox.datatrans.com'.freeze
 
     URLS = {
       :development => {
