@@ -7,21 +7,24 @@ module Datatrans
 
     BASE_URL_PRODUCTION = 'https://pay.datatrans.com'.freeze
     BASE_URL_DEVELOPMENT = 'https://pay.sandbox.datatrans.com'.freeze
+    
+    API_URL_PRODUCTION = 'https://api.datatrans.com'.freeze
+    API_URL_DEVELOPMENT = 'https://api.sandbox.datatrans.com'.freeze
 
     URLS = {
       :development => {
         :web_authorize_url  => "#{BASE_URL_DEVELOPMENT}/upp/jsp/upStart.jsp".freeze,
-        :xml_authorize_url  => "#{BASE_URL_DEVELOPMENT}/upp/jsp/XML_authorize.jsp".freeze,
-        :xml_settlement_url => "#{BASE_URL_DEVELOPMENT}/upp/jsp/XML_processor.jsp".freeze,
-        :xml_status_url     => "#{BASE_URL_DEVELOPMENT}/upp/jsp/XML_status.jsp".freeze,
-        :xml_credit_url     => "#{BASE_URL_DEVELOPMENT}/upp/jsp/XML_processor.jsp".freeze,
+        :xml_authorize_url  => "#{API_URL_DEVELOPMENT}/upp/jsp/XML_authorize.jsp".freeze,
+        :xml_settlement_url => "#{API_URL_DEVELOPMENT}/upp/jsp/XML_processor.jsp".freeze,
+        :xml_status_url     => "#{API_URL_DEVELOPMENT}/upp/jsp/XML_status.jsp".freeze,
+        :xml_credit_url     => "#{API_URL_DEVELOPMENT}/upp/jsp/XML_processor.jsp".freeze,
       },
       :production => {
         :web_authorize_url  => "#{BASE_URL_PRODUCTION}/upp/jsp/upStart.jsp".freeze,
-        :xml_authorize_url  => "#{BASE_URL_PRODUCTION}/upp/jsp/XML_authorize.jsp".freeze,
-        :xml_settlement_url => "#{BASE_URL_PRODUCTION}/upp/jsp/XML_processor.jsp".freeze,
-        :xml_status_url     => "#{BASE_URL_PRODUCTION}/upp/jsp/XML_status.jsp".freeze,
-        :xml_credit_url     => "#{BASE_URL_PRODUCTION}/upp/jsp/XML_processor.jsp".freeze,
+        :xml_authorize_url  => "#{API_URL_PRODUCTION}/upp/jsp/XML_authorize.jsp".freeze,
+        :xml_settlement_url => "#{API_URL_PRODUCTION}/upp/jsp/XML_processor.jsp".freeze,
+        :xml_status_url     => "#{API_URL_PRODUCTION}/upp/jsp/XML_status.jsp".freeze,
+        :xml_credit_url     => "#{API_URL_PRODUCTION}/upp/jsp/XML_processor.jsp".freeze,
       }.freeze
     }.freeze
 
