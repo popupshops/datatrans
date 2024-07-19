@@ -35,7 +35,7 @@ class Datatrans::JSON::Transaction
 
   class SettleResponse < Response
     def successful?
-      params["error"].blank?
+      params&.[]("error").blank?
     end
   end
 end
