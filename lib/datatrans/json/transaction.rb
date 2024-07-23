@@ -42,6 +42,18 @@ module Datatrans::JSON
       @response.successful?
     end
 
+    def cancel
+      self.request = Cancel.new(datatrans, params)
+      @response = CancelResponse.new(datatrans, request.process)
+      @response.successful?
+    end
+
+    def credit
+      self.request = Credit.new(datatrans, params)
+      @response = CreditResponse.new(datatrans, request.process)
+      @response.successful?
+    end
+
     def transaction_path
       datatrans.url(:start_json_transaction, transaction_id: params[:transaction_id])
     end

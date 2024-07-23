@@ -78,6 +78,14 @@ module Datatrans
         # https://api.sandbox.datatrans.com/v1/transactions/{transactionId}/settle
         subdomain = SUBDOMAINS[:server_to_server_api]
         path = "/v1/transactions/#{options[:transaction_id]}/settle"
+      when :json_cancel_url
+        # https://api.sandbox.datatrans.com/v1/transactions/{transactionId}/cancel
+        subdomain = SUBDOMAINS[:server_to_server_api]
+        path = "/v1/transactions/#{options[:transaction_id]}/cancel"
+      when :json_credit_url
+        # https://api.sandbox.datatrans.com/v1/transactions/{transactionId}/credit
+        subdomain = SUBDOMAINS[:server_to_server_api]
+        path = "/v1/transactions/#{options[:transaction_id]}/credit"
       else
         raise "Unknown wanted action '#{what}'."
       end
